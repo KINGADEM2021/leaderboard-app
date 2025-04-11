@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 13%;
+    --card-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 224 76% 48%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  .font-arabic {
+    font-family: 'Noto Sans Arabic', sans-serif;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground min-h-screen;
+    background: linear-gradient(135deg, hsl(222 47% 11%), hsl(222 47% 8%));
+  }
+  
+  .glass-card {
+    @apply border border-opacity-20 bg-opacity-20 backdrop-blur-md rounded-xl shadow-lg;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  .gradient-heading {
+    @apply bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text font-bold;
+  }
+
+  /* Modern Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+
+  /* Smooth transitions */
+  .animate-smooth {
+    transition: all 200ms ease-in-out;
+  }
+
+  /* Card hover effects */
+  .hover-card {
+    @apply animate-smooth;
+    transform: translateY(0);
+  }
+
+  .hover-card:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Button hover effects */
+  .button-hover {
+    @apply transition-all duration-200;
+  }
+
+  .button-hover:hover {
+    @apply scale-105;
+  }
+
+  /* Icon animations */
+  .icon-hover {
+    @apply transition-transform duration-200;
+  }
+
+  .icon-hover:hover {
+    @apply scale-110;
+  }
+}
